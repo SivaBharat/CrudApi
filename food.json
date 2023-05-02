@@ -1,0 +1,94 @@
+{
+  "food": [
+    {
+      "id": 1,
+      "FoodName": "Idly",
+      "FoodType": "Veg",
+      "AvailableTime": "7.00am",
+      "PersonNo": "8940808429",
+      "Cost": "5",
+      "avatar": "https://www.melivecode.com/users/1.png"
+    },
+    {
+      "id": 2,
+      "FoodName": "Dhosai",
+      "FoodType": "Veg",
+      "AvailableTime": "7.00am",
+      "PersonNo": "8940808427",
+      "Cost": "10",
+      "avatar": "https://www.melivecode.com/users/2.png"
+    },
+    {
+      "id": 3,
+      "FoodName": "Poori",
+      "FoodType": "Veg",
+      "AvailableTime": "7.30am",
+      "PersonNo": "8940808428",
+      "Cost": "10",
+      "avatar": "https://www.melivecode.com/users/3.png"
+    },
+    {
+      "id": 4,
+      "FoodName": "Pongal",
+      "FoodType": "Veg",
+      "AvailableTime": "7.30am",
+      "PersonNo": "8940808420",
+      "Cost": "30",
+      "avatar": "https://www.melivecode.com/users/4.png"
+    },
+    {
+      "id": 5,
+      "FoodName": "Meals",
+      "FoodType": "Veg",
+      "AvailableTime": "12.30pm",
+      "PersonNo": "8940808421",
+      "Cost": "60",
+      "avatar": "https://www.melivecode.com/users/5.png"
+    },
+    {
+      "id": 6,
+      "FoodName": "Chicken-Briyani",
+      "FoodType": "Non-Veg",
+      "AvailableTime": "12.00pm",
+      "PersonNo": "8940808422",
+      "Cost": "100",
+      "avatar": "https://www.melivecode.com/users/6.png"
+    },
+    {
+      "id": 7,
+      "FoodName": "Mutton-Briyani",
+      "FoodType": "Non-Veg",
+      "AvailableTime": "1.00pm",
+      "PersonNo": "8940808423",
+      "Cost": "150",
+      "avatar": "https://www.melivecode.com/users/7.png"
+    },
+    {
+      "id": 8,
+      "FoodName": "Egg-Briyani",
+      "FoodType": "Non-Veg",
+      "AvailableTime": "12.30pm",
+      "PersonNo": "8940808424",
+      "Cost": "80",
+      "avatar": "https://www.melivecode.com/users/8.png"
+    },
+    {
+        "id": 9,
+        "FoodName": "Tomato-Rice",
+        "FoodType": "Veg",
+        "AvailableTime": "12.30pm",
+        "PersonNo": "8940808424",
+        "Cost": "40",
+        "avatar": "https://www.melivecode.com/users/8.png"
+      },
+    {
+      "id": 10,
+      "FoodName": "Curd-Rice",
+      "FoodType": "veg",
+      "AvailableTime": "12.00pm",
+      "PersonNo": "8940808419",
+      "Cost": "35",
+      "avatar": "https://www.melivecode.com/users/10.png"
+    }
+  ]
+}

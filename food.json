@@ -73,14 +73,14 @@
       "avatar": "https://www.melivecode.com/users/8.png"
     },
     {
-        "id": 9,
-        "FoodName": "Tomato-Rice",
-        "FoodType": "Veg",
-        "AvailableTime": "12.30pm",
-        "PersonNo": "8940808424",
-        "Cost": "40",
-        "avatar": "https://www.melivecode.com/users/8.png"
-      },
+      "id": 9,
+      "FoodName": "Tomato-Rice",
+      "FoodType": "Veg",
+      "AvailableTime": "12.30pm",
+      "PersonNo": "8940808424",
+      "Cost": "40",
+      "avatar": "https://www.melivecode.com/users/8.png"
+    },
     {
       "id": 10,
       "FoodName": "Curd-Rice",
@@ -89,6 +89,15 @@
       "PersonNo": "8940808419",
       "Cost": "35",
       "avatar": "https://www.melivecode.com/users/10.png"
+    },
+    {
+      "FoodName": "Parotta",
+      "FoodType": "Non-Veg",
+      "AvailableTime": "7.15pm",
+      "PersonNo": "8940808410",
+      "Cost": "15",
+      "avatar": "https://www.melivecode.com/users/1.png",
+      "id": 11
     }
   ]
 }

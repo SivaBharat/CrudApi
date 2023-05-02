@@ -11,7 +11,7 @@ function loadTable() {
           trHTML += "<tr>";
           trHTML += "<td>" + object["id"] + "</td>";
           trHTML +=
-            '<td><img width="50px" src="' +
+            '<td><img width="70px" src="assests/download1.jpg"' +
             object["avatar"] +
             '" class="avatar"></td>';
           trHTML += "<td>" + object["FoodName"] + "</td>";
@@ -51,7 +51,7 @@ function loadTable() {
       },
     });
   }
-  
+ 
   function userCreate() {
     const FoodName = document.getElementById("FoodName").value;
     const FoodType = document.getElementById("FoodType").value;
@@ -176,6 +176,51 @@ function loadTable() {
         };
     }
       });
+      }
+
+      function validate(){
+        var FoodName = document.getElementById("FoodName").value;
+    var FoodType = document.getElementById("FoodType").value;
+    var AvailableTime = document.getElementById("AvailableTime").value;
+    var PersonNo = document.getElementById("PersonNo").value;
+    var Cost = document.getElementById("Cost").value;
+
+    var name_check=/^[A-Za-z' ']+$/;
+    var type_check=/^[A-Za-z' '-]+$/;
+    var time_check=/^[0-24a-z]+$/;
+    var num_check=/^[0-9]{10}+$/;
+    var cost_check=/^[0-9]{4}+$/;
+
+    if(FoodName== ''){
+        alert('Enter the food name');
+    }
+    else if(!name_check.test(FoodName)){
+        alert('Invalid food name');
+    }
+    else if(FoodType==''){
+        alert('Enter the food type');
+    }
+    else if(!type_check.test(FoodType)){
+        alert('Invalid food type');
+    }
+    else if(AvailableTime==''){
+        alert('Enter the available time');
+    }
+    else if(!time_check.test(AvailableTime)){
+        alert('Invalid time');
+    }
+    else if(PersonNo==''){
+        alert('Enter the contact number');
+    }
+    else if(!num_check.test(PersonNo)){
+        alert('Invalid number')
+    }
+    else if(Cost==''){
+        alert('enter the cost value');
+    }
+    else{
+        alert('Invalid cost');
+    }
       }
       
     

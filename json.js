@@ -105,7 +105,7 @@ function showUserEditBox(id) {
           '<input id="FoodType" class="swal2-input" placeholder="Type" value="' +
           objects["FoodType"] +
           '">' +
-          '<input id="AvailableTime" class="swal2-input" placeholder="Time" value="' +
+          '<label>AvailableTime</label><input id="AvailableTime" type=time class="swal2-input" placeholder="Time" value="' +
           objects["AvailableTime"] +
           '">' +
           '<input id="PersonNo" class="swal2-input" placeholder="Number" value="' +
@@ -192,8 +192,6 @@ function userDelete(id) {
   const Cost = document.getElementById("Cost").value;
   //regular expression
   const nameCheck=/^[a-zA-Z\s]{2,32}$/;
-  const typeCheck=/^[a-zA-Z\s]{2,32}$/;
- const timeCheck=/^[0-2][0-3]:[0-5][0-9]$/;
   const numCheck=/^[0-9]{10}$/;
 const costCheck=/^\d{0,8}[.]?\d{1,4}$/;
 //condition
@@ -212,30 +210,6 @@ if (!FoodName.match(nameCheck)) {
   Swal.fire({
       title: "Invalid Input",
       text: "Food name should only contain alphabetical letters",
-      icon: "error",
-      showConfirmButton: true,
-
-  })
-  return false;
-
-}
-if (!FoodType.match(typeCheck)) {
-
-  Swal.fire({
-      title: "Invalid Input",
-      text: "Food type should only contain alphabetical letters",
-      icon: "error",
-      showConfirmButton: true,
-
-  })
-  return false;
-
-}
-if (!AvailableTime.match(timeCheck)) {
-
-  Swal.fire({
-      title: "Invalid Input",
-      text: "Available time should contain time format",
       icon: "error",
       showConfirmButton: true,
 
@@ -267,7 +241,7 @@ if (!Cost.match(costCheck)) {
   return false;
 
 }
-if (FoodName.match(nameCheck) && FoodType.match(typeCheck) && AvailableTime.match(timeCheck)&& PersonNo.match(numCheck)&& Cost.match(costCheck)) {
+if (FoodName.match(nameCheck)&& PersonNo.match(numCheck)&& Cost.match(costCheck)) {
   Swal.fire({
       title: "Successfully Created",
       icon: "success",

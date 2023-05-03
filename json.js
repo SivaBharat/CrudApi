@@ -16,17 +16,17 @@ function loadTable() {
           '" class="image"></td>';
         trHTML += "<td>" + object["FoodName"] + "</td>";
         trHTML += "<td>" + object["FoodType"] + "</td>";
-        trHTML += "<td>" + object["AvailableTime"] + "</td>";
-        trHTML += "<td>" + object["PersonNo"] + "</td>";
+        trHTML += "<td>" + object["Category"] + "</td>";
+        trHTML += "<td>" + object["AvailableTime"] + "</td>";       
         trHTML += "<td>" + object["Cost"] + "</td>";
         trHTML +=
-          '<td><button type="button" class="btn btn-outline-secondary" onclick="showUserEditBox(' +
+          '<td><button type="button" class="btn btn-outline-warning" onclick="showUserEditBox(' +
           object["id"] +
-          ')">Edit</button>';
+          ')"><i class="fa-regular fa-pen-to-square"></i></button>';
         trHTML +=
           '<button type="button" class="btn btn-outline-danger" onclick="userDelete(' +
           object["id"] +
-          ')">Del</button></td>';
+          ')"><i class="fa-solid fa-trash"></i></button></td>';
         trHTML += "</tr>";
       }
       document.getElementById("mytable").innerHTML = trHTML;
@@ -38,17 +38,16 @@ loadTable();
 //Create box 
 function showUserCreateBox() {
   Swal.fire({
-    title: "Food Create",
+    title: "Add Food",
     html:
       '<input id="id" type="hidden">' +
-      '<input id="FoodName" class="swal2-input" placeholder="Name"><br><br>' + 
-      '<label>FoodType</label><select name="country" id="FoodType" style="width:160px"><option value="Veg">Veg</option><option value="Non-Veg">Non-Veg</option><option value="Chinesh">Chinesh</option><option value="Snacks">Snacks</option><option value="other">other</option></select><br>'+
-      '<label>AvailableTime</label><input id="AvailableTime" class="swal2-input" type="time">' +
-      '<input id="PersonNo" class="swal2-input" placeholder="Number">'+
-      '<input id="Cost" class="swal2-input" placeholder="Cost">',
+      '<label>FoodName</label><input id="FoodName" class="col-xs-2" placeholder="FoodName"><br><br>' + 
+      '<label>FoodType</label><select name="country" id="FoodType" style="width:160px"><option value="Veg">Veg</option><option value="Non-Veg">Non-Veg</option><option value="IceCreams">IceCreams</option><option value="Snacks">Snacks</option><option value="other">other</option></select><br><br>'+
+      '<label>Category</label><select name="country" id="Category" style="width:160px"><option value="SouthIndian">SouthIndian</option><option value="NorthIndian">NorthIndian</option><option value="Chinesh">Chinesh</option><option value="French">French</option><option value="other">other</option></select><br>'+
+      '<br><label>AvailableTime</label><br><input id="AvailableTime" class="swal2-input" type="time">' +      
+      '<br><br><label>Cost</label><input id="Cost" class="col-xs-2" placeholder="Cost">',
     preConfirm: () => {
-  
-      userCreate();
+        userCreate();
     },
   });
 }
@@ -56,8 +55,8 @@ function showUserCreateBox() {
 function userCreate() {
   const FoodName = document.getElementById("FoodName").value;
   const FoodType = document.getElementById("FoodType").value;
-  const AvailableTime = document.getElementById("AvailableTime").value;
-  const PersonNo = document.getElementById("PersonNo").value;
+  const Category = document.getElementById("Category").value;
+  const AvailableTime = document.getElementById("AvailableTime").value;  
   const Cost = document.getElementById("Cost").value;
 
   if(validate()==true){
@@ -68,10 +67,10 @@ function userCreate() {
     JSON.stringify({
       FoodName: FoodName,
       FoodType: FoodType,
-      AvailableTime: AvailableTime,
-      PersonNo: PersonNo,
+      Category: Category,
+      AvailableTime: AvailableTime,      
       Cost:Cost,
-      image: "https://www.google.com/url?sa=i&url=https%3A%2F%2Fwww.istockphoto.com%2Fphotos%2Fidli&psig=AOvVaw1BWZK5XRhw0ageD9yV7bj1&ust=1683178436725000&source=images&cd=vfe&ved=0CBEQjRxqFwoTCNC-tri22P4CFQAAAAAdAAAAABAE",
+      image: "https://logitrustvoyages.com/logitrustblog/wp-content/uploads/2020/07/street_food.jpeg",
     })
   );
   xhttp.onreadystatechange = function () {
@@ -99,19 +98,20 @@ function showUserEditBox(id) {
           '<input id="id" type="hidden" value="' +
           objects[`${id}`] +
           '">' +
-          '<input id="FoodName" class="swal2-input" placeholder="Name" value="' +
+          '<label>FoodName</label><input id="FoodName" class="col-xs-2" placeholder="Name" value="' +
           objects["FoodName"] +
-          '">' +
-          '<input id="FoodType" class="swal2-input" placeholder="Type" value="' +
+          '"><br><br>' +
+          '<label>FoodType</label><select name="country" id="FoodType" style="width:160px"><option value="Veg">Veg</option><option value="Non-Veg">Non-Veg</option><option value="IceCreams">IceCreams</option><option value="Snacks">Snacks</option><option value="other">other</option>' +
           objects["FoodType"] +
-          '">' +
-          '<label>AvailableTime</label><input id="AvailableTime" type=time class="swal2-input" placeholder="Time" value="' +
+          '"</select><br><br>' +
+          '<label>Category</label><select name="country" id="Category" style="width:160px"><option value="SouthIndian">SouthIndian</option><option value="NorthIndian">NorthIndian</option><option value="Chinesh">Chinesh</option><option value="French">French</option><option value="other">other</option>'+
+          objects["Category"] +
+          '"</select><br>'+
+          '<br><label>AvailableTime</label><br><input id="AvailableTime" type=time class="swal2-input" value="' +
           objects["AvailableTime"] +
           '">' +
-          '<input id="PersonNo" class="swal2-input" placeholder="Number" value="' +
-          objects["PersonNo"] +
-          '">'+
-          '<input id="Cost" class="swal2-input" placeholder="Cost" value="' +
+          
+          '<br><br><label>Cost</label><input id="Cost" class="col-xs-2" placeholder="Cost" value="' +
           objects["Cost"] +
           '">',
         preConfirm: () => {
@@ -126,23 +126,21 @@ function showUserEditBox(id) {
 function userEdit(id) {
   const FoodName = document.getElementById("FoodName").value;
   const FoodType = document.getElementById("FoodType").value;
-  const AvailableTime = document.getElementById("AvailableTime").value;
-  const PersonNo = document.getElementById("PersonNo").value;
+  const Category = document.getElementById("Category").value;
+  const AvailableTime = document.getElementById("AvailableTime").value;  
   const Cost = document.getElementById("Cost").value;
   if(validate()==true){
-  console.log(id);
-  console.log(FoodName);
-  const xhttp = new XMLHttpRequest();
+    const xhttp = new XMLHttpRequest();
   xhttp.open("PUT", `http://localhost:3000/food/${id}`);
   xhttp.setRequestHeader("Content-Type", "application/json;charset=UTF-8");
   xhttp.send(
     JSON.stringify({
       FoodName: FoodName,
       FoodType: FoodType,
-      AvailableTime: AvailableTime,
-      PersonNo: PersonNo,
+      Category: Category,
+      AvailableTime: AvailableTime,      
       Cost:Cost,
-      image: "https://www.google.com/url?sa=i&url=https%3A%2F%2Fwww.istockphoto.com%2Fphotos%2Fidli&psig=AOvVaw1BWZK5XRhw0ageD9yV7bj1&ust=1683178436725000&source=images&cd=vfe&ved=0CBEQjRxqFwoTCNC-tri22P4CFQAAAAAdAAAAABAE",
+      image: "https://logitrustvoyages.com/logitrustblog/wp-content/uploads/2020/07/street_food.jpeg",
     })
   );
   xhttp.onreadystatechange = function () {
@@ -188,15 +186,14 @@ function userDelete(id) {
   const FoodName = document.getElementById("FoodName").value;
   const FoodType = document.getElementById("FoodType").value;
   const AvailableTime = document.getElementById("AvailableTime").value;
-  const PersonNo = document.getElementById("PersonNo").value;
+  const Category = document.getElementById("Category").value;
   const Cost = document.getElementById("Cost").value;
   //regular expression
   const nameCheck=/^[a-zA-Z\s]{2,32}$/;
-  const numCheck=/^[0-9]{10}$/;
 const costCheck=/^\d{0,8}[.]?\d{1,4}$/;
 //condition
 
-if (FoodName == "" || FoodType == "" || AvailableTime == "" || PersonNo == "" || Cost == "") {
+if (FoodName == "" || FoodType == "" || AvailableTime == "" || Category == "" || Cost == "") {
   Swal.fire({
       title: "Fields should not be empty",
       showConfirmButton: true,
@@ -217,18 +214,6 @@ if (!FoodName.match(nameCheck)) {
   return false;
 
 }
-if (!PersonNo.match(numCheck)) {
-
-  Swal.fire({
-      title: "Invalid Input",
-      text: "Person number should only contain ten numbers",
-      icon: "error",
-      showConfirmButton: true,
-
-  })
-  return false;
-
-}
 if (!Cost.match(costCheck)) {
 
   Swal.fire({
@@ -241,7 +226,7 @@ if (!Cost.match(costCheck)) {
   return false;
 
 }
-if (FoodName.match(nameCheck)&& PersonNo.match(numCheck)&& Cost.match(costCheck)) {
+if (FoodName.match(nameCheck) && Cost.match(costCheck)) {
   Swal.fire({
       title: "Successfully Created",
       icon: "success",

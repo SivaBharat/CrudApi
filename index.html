@@ -12,15 +12,17 @@
 <!--Navbar-->
     <nav class="navbar navbar-dark bg-mynav">
       <div class="container-fluid">
-        <a class="navbar-brand" href="#">Food-Festa</a>
+        <a class="navbar-brand" href="#">Food-Festa</a>          
+        </nav>
       </div>
+      
     </nav>
     <!--Create button-->
     <div class="container">
       <div class="d-flex bd-highlight mb-3">
-        <div class="me-auto p-2 bd-highlight"><h2>Available-Foods</div>
+        <div class="me-auto p-2 bd-highlight"><h2>Food-List</div>
         <div class="p-2 bd-highlight">
-          <button type="button" class="btn btn-secondary" onclick="showUserCreateBox()">Add Food</button>
+          <button type="button" class="btn btn-light" onclick="showUserCreateBox()">Add Food</button>
         </div>
       </div>
 <!--Table-->
@@ -32,9 +34,10 @@
               <th scope="col">FoodImage</th>
               <th scope="col">FoodName</th>
               <th scope="col">FoodType</th>
-              <th scope="col">AvailableTime</th>
-              <th scope="col">PersonNo</th>
+              <th scope="col">Category</th>
+              <th scope="col">AvailableTime</th>              
               <th scope="col">Cost</th>
+              <th scope="col">Action</th>
             </tr>
           </thead>
           <tbody id="mytable">
@@ -47,6 +50,7 @@
     </div>
 <!--External js file-->
     <script src="json.js"></script>
+    <script src="https://kit.fontawesome.com/d509f79d02.js" crossorigin="anonymous"></script>
     <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11.0.16/dist/sweetalert2.all.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/js/bootstrap.bundle.min.js" integrity="sha384-gtEjrD/SeCtmISkJkNUaaKMoLD0//ElJ19smozuHV6z3Iehds+3Ulb9Bn9Plx0x4" crossorigin="anonymous"></script>
     

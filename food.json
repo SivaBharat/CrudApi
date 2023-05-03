@@ -1,14 +1,58 @@
 {
   "food": [
     {
+      "FoodName": "Poori",
+      "FoodType": "Veg",
+      "Category": "SouthIndian",
+      "AvailableTime": "07:00",
+      "Cost": "05.00",
+      "image": "https://i.pinimg.com/736x/ca/bd/d2/cabdd26c0f6b78155a181713459619a8.jpg",
+      "id": 1
+    },
+    {
       "FoodName": "Idly",
       "FoodType": "Veg",
-      
-      "AvailableTime": "14:25",
-      "PersonNo": "8940808429",
-      "Cost": "34.00",
-      "image": "https://www.google.com/url?sa=i&url=https%3A%2F%2Fwww.dreamstime.com%2Fphotos-images%2Fidly.html&psig=AOvVaw2lE5XIDsdRJEDEtSSq-j-O&ust=1683190823273000&source=images&cd=vfe&ved=0CBEQjRxqFwoTCOD-rsvk2P4CFQAAAAAdAAAAABBD",
-      "id": 1
+      "Category": "SouthIndian",
+      "AvailableTime": "07:00",
+      "Cost": "05.00",
+      "image": "https://www.healthifyme.com/blog/wp-content/uploads/2018/03/idly2.jpeg",
+      "id": 2
+    },
+    {
+      "FoodName": "Meals",
+      "FoodType": "Veg",
+      "Category": "SouthIndian",
+      "AvailableTime": "12:30",
+      "Cost": "70.00",
+      "image": "https://th.bing.com/th/id/R.efb364090421d2100ccbe6867388899f?rik=mO5X65GTv3OWkQ&riu=http%3a%2f%2fwww.southindianfoods.in%2frecipe_picture_enlarge%2fandhra_plaintainleaf_meals.jpg&ehk=TYlUSn2UkbUYTyG266K9hr5cetuX8Wx52uw4%2fNdqVuw%3d&risl=&pid=ImgRaw&r=0",
+      "id": 3
+    },
+    {
+      "FoodName": "Parotta",
+      "FoodType": "Non-Veg",
+      "Category": "SouthIndian",
+      "AvailableTime": "19:00",
+      "Cost": "15.00",
+      "image": "https://farm9.staticflickr.com/8586/16023214373_90552b64f6_o.jpg",
+      "id": 4
+    },
+    {
+      "FoodName": "Noodles",
+      "FoodType": "Veg",
+      "Category": "Chinesh",
+      "AvailableTime": "19:00",
+      "Cost": "90.00",
+      "image": "https://tse2.mm.bing.net/th/id/OIP.C3Ep0grJrP7VQASs-3ocnwHaFY?pid=ImgDet&rs=1",
+      "id": 5
+    },
+    {
+      "FoodName": "FrenchRice",
+      "FoodType": "Veg",
+      "Category": "French",
+      "AvailableTime": "20:00",
+      "Cost": "120.00",
+      "image": "https://logitrustvoyages.com/logitrustblog/wp-content/uploads/2020/07/street_food.jpeg",
+      "id": 6
     }
   ]
 }

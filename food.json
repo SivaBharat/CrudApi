@@ -6,7 +6,7 @@
       "Category": "SouthIndian",
       "AvailableTime": "07:00",
       "Cost": "05.00",
-      "image": "https://i.pinimg.com/736x/ca/bd/d2/cabdd26c0f6b78155a181713459619a8.jpg",
+      "image": "https://lh4.ggpht.com/-aCEJWGEJ020/UpWAPaaJWiI/AAAAAAAAW8U/SQTRpemQkCU/s72-c/poori-recipe_thumb1.jpg?imgmax=600",
       "id": 1
     },
     {
@@ -48,9 +48,9 @@
     {
       "FoodName": "FrenchRice",
       "FoodType": "Veg",
-      "Category": "French",
+      "Category": "SouthIndian",
       "AvailableTime": "20:00",
-      "Cost": "120.00",
+      "Cost": "130.00",
       "image": "https://logitrustvoyages.com/logitrustblog/wp-content/uploads/2020/07/street_food.jpeg",
       "id": 6
     }

@@ -1,6 +1,6 @@
-function loadTable() {
+function loadTable(FoodName= '') {
   const xhttp = new XMLHttpRequest();
-  xhttp.open("GET", "http://localhost:3000/food");
+  xhttp.open("GET", `http://localhost:3000/food?FoodName_like=${FoodName}`);
   xhttp.send();
   xhttp.onreadystatechange = function () {
     if (this.readyState == 4 && this.status == 200) {
@@ -20,7 +20,7 @@ function loadTable() {
         trHTML += "<td>" + object["AvailableTime"] + "</td>";       
         trHTML += "<td>" + object["Cost"] + "</td>";
         trHTML +=
-          '<td><button type="button" class="btn btn-outline-warning" onclick="showUserEditBox(' +
+          '<td><button type="button" class="btn btn-outline-primary me-2" onclick="showUserEditBox(' +
           object["id"] +
           ')"><i class="fa-regular fa-pen-to-square"></i></button>';
         trHTML +=
@@ -35,17 +35,23 @@ function loadTable() {
 }
 
 loadTable();
+// searching
+function search() {
+  const FoodName = document.getElementById("searchvalue").value;
+  loadTable(FoodName);
+}
+
 //Create box 
 function showUserCreateBox() {
   Swal.fire({
     title: "Add Food",
     html:
       '<input id="id" type="hidden">' +
-      '<label>FoodName</label><input id="FoodName" class="col-xs-2" placeholder="FoodName"><br><br>' + 
+      '<label>FoodName</label><input id="FoodName" class="col-xs-2" placeholder=""><br><br>' + 
       '<label>FoodType</label><select name="country" id="FoodType" style="width:160px"><option value="Veg">Veg</option><option value="Non-Veg">Non-Veg</option><option value="IceCreams">IceCreams</option><option value="Snacks">Snacks</option><option value="other">other</option></select><br><br>'+
       '<label>Category</label><select name="country" id="Category" style="width:160px"><option value="SouthIndian">SouthIndian</option><option value="NorthIndian">NorthIndian</option><option value="Chinesh">Chinesh</option><option value="French">French</option><option value="other">other</option></select><br>'+
       '<br><label>AvailableTime</label><br><input id="AvailableTime" class="swal2-input" type="time">' +      
-      '<br><br><label>Cost</label><input id="Cost" class="col-xs-2" placeholder="Cost">',
+      '<br><br><label>Cost</label><input id="Cost" class="col-xs-2" placeholder="">',
     preConfirm: () => {
         userCreate();
     },
@@ -93,12 +99,12 @@ function showUserEditBox(id) {
       const objects = JSON.parse(this.responseText);
       console.log(objects);
       Swal.fire({
-        title: "Edit User",
+        title: "Edit Menu",
         html:
           '<input id="id" type="hidden" value="' +
           objects[`${id}`] +
           '">' +
-          '<label>FoodName</label><input id="FoodName" class="col-xs-2" placeholder="Name" value="' +
+          '<label>FoodName</label><input id="FoodName" class="col-xs-2" placeholder="" value="' +
           objects["FoodName"] +
           '"><br><br>' +
           '<label>FoodType</label><select name="country" id="FoodType" style="width:160px"><option value="Veg">Veg</option><option value="Non-Veg">Non-Veg</option><option value="IceCreams">IceCreams</option><option value="Snacks">Snacks</option><option value="other">other</option>' +
@@ -111,7 +117,7 @@ function showUserEditBox(id) {
           objects["AvailableTime"] +
           '">' +
           
-          '<br><br><label>Cost</label><input id="Cost" class="col-xs-2" placeholder="Cost" value="' +
+          '<br><br><label>Cost</label><input id="Cost" class="col-xs-2" placeholder="" value="' +
           objects["Cost"] +
           '">',
         preConfirm: () => {
